@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-view',
+  selector: 'app-all',
   template: `
-  <app-bookmark></app-bookmark>
-  <app-all></app-all>
+    <p>
+      all works!
+    </p>
   `,
   styles: []
 })
-export class ViewComponent implements OnInit {
+export class AllComponent implements OnInit {
 
   constructor() { }
 
