@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-    <p>
-      header works!
-    </p>
+  <h1>Rich Boys</h1>
   `,
   styles: []
 })
