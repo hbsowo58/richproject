@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-bookmark',
   template: `
-    <p>
-      bookmark works!
-    </p>
+  <ul>
+    <li></li>
+  </ul>
   `,
   styles: []
 })
