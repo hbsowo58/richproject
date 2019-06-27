@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-view',
+  selector: 'app-bookmark',
   template: `
-  <app-bookmark></app-bookmark>
-  <app-all></app-all>
+    <p>
+      bookmark works!
+    </p>
   `,
   styles: []
 })
-export class ViewComponent implements OnInit {
+export class BookmarkComponent implements OnInit {
 
   constructor() { }
 

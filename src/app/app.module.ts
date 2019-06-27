@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { ViewComponent } from './view/view.component';
 import { AsideComponent } from './aside/aside.component';
+import { AllComponent } from './all/all.component';
+import { BookmarkComponent } from './bookmark/bookmark.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AsideComponent } from './aside/aside.component';
     FooterComponent,
     NavComponent,
     ViewComponent,
-    AsideComponent
+    AsideComponent,
+    AllComponent,
+    BookmarkComponent
   ],
   imports: [
     BrowserModule
