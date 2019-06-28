@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { merge } from 'rxjs';
+import { MarketList } from '../market-list.interface';
 
 @Component({
   selector: 'app-view',
@@ -36,11 +37,14 @@ export class ViewComponent implements OnInit {
   {name:'MTL', upbit_price:"", binance_price:""},
   {name:'OMG', upbit_price:"", binance_price:""}
   ]
+
+  foreign: MarketList[];
+  list: MarketList[];
+  total = []
   @Input() upbitData;
   constructor() { }
 
   ngOnInit() {
-    // this.merge();
   }
   binanceData(data) {
     this.foreign = data;
@@ -50,15 +54,15 @@ export class ViewComponent implements OnInit {
       return item;
     })
   }
+    
+  }
+  binanceData(data) {
+    this.foreign = data;
+  }
 
   welcome(list) {
     console.log('hello')
     this.list = list;
     
   }
-
-  // merge() {
-  //   this.total = [this.list, this.foreign]
-  // }
-
 }
