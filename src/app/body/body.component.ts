@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   <app-view></app-view>
   <app-aside></app-aside>
   `,
-  styles: []
+  styles: [`
+  `]
 })
 export class BodyComponent implements OnInit {
 
