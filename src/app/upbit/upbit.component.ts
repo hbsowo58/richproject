@@ -47,7 +47,7 @@ export class UpbitComponent implements OnInit {
     const url = 'https://api.upbit.com/v1/ticker?markets=KRW-BTC,KRW-XRP,KRW-ETH,KRW-BCH,KRW-ADA,KRW-EOS,KRW-XLM,KRW-LTC,KRW-QTUM,KRW-TRX,KRW-BTT,KRW-ETC,KRW-NPXS,KRW-ZEC,KRW-NEO,KRW-REP,KRW-ZIL,KRW-SNT,KRW-MTL,KRW-OMG';
     this.http.get(url).subscribe(data => {
       this.newMarketPrice = data;
-     this.marketPrice = this.newMarketPrice.map(item => this.newMarketPrice = { "name": item.market, "price": item.trade_price })
+     this.marketPrice = this.newMarketPrice.map(item => this.newMarketPrice = { "name": item.market, "price": item.trade_price, "opening": item.opening_price })
       this.upbitData.emit(this.marketPrice);
     });
    }
