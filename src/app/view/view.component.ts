@@ -6,12 +6,86 @@ import { MarketList } from '../market-list.interface';
   selector: 'app-view',
   template: `
   <app-bookmark></app-bookmark>
-  <app-all></app-all>
   <app-binance (binanceData)="binanceData($event)" ></app-binance>
   <app-upbit (upbitData)="welcome($event)"></app-upbit>
-  <pre>{{total| json}}</pre>
+  <div class="view">
+     <div>
+           <ul class="active">
+               <li>
+                   <button>이름</button>
+                   <button>현재가(원)</button>
+                   <button>김치프리미엄</button>
+                   <button>전일대비</button>
+               </li>
+             </ul>
+
+             <ul>
+               <li class="all-contents" *ngFor="let item of total">
+                 <div class="item name">{{item.name}}</div>
+                 <div class="item price">{{item.upbit_price}}</div>
+                 <div class="item price">{{item.binance_price}}</div>
+                 <div class="item pre">0.2%</div>
+               </li>
+             </ul>
+     </div>
+     <div>
+           <ul class="#">
+               <li>
+                   <button>이름</button>
+                   <button>현재가(원)</button>
+                   <button>김치프리미엄</button>
+                   <button>전일대비</button>
+               </li>
+             </ul>
+
+             <ul>
+               <li class="book-mark" *ngFor="let item of total">
+                 <div class="item name">{{item.name}}</div>
+                 <div class="item price">{{item.upbit_price}}</div>
+                 <div class="item kimchi">{{item.binance_price}}%</div>
+                 <div class="item pre">0.2%</div>
+               </li>
+             </ul>
+
+     </div>
+  </div>
+
+
   `,
-  styles: []
+  styles: [`
+  button {
+    margin: 0px 5px;
+    width: 120px;
+    border: 0;
+    outline : 0;
+    text-decoration: underline;
+    background: none;
+    color: #949ba7;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  .item {
+    margin: 5px 5px;
+    width: 120px;
+    display: inline-block;
+    text-decoration: underline;
+  }
+
+  .name {
+    color: #d19a66;
+  }
+
+  .price {
+    color: #56b6c2;
+  }
+
+  .kimchi {
+    color: #98c379;
+  }
+  `]
 })
 export class ViewComponent implements OnInit {
   foreign;
@@ -38,9 +112,7 @@ export class ViewComponent implements OnInit {
   {name:'OMG', upbit_price:"", binance_price:""}
   ]
 
-  foreign: MarketList[];
-  list: MarketList[];
-  total = []
+  
   @Input() upbitData;
   constructor() { }
 
@@ -53,11 +125,6 @@ export class ViewComponent implements OnInit {
       item.binance_price= this.foreign[i].price;
       return item;
     })
-  }
-    
-  }
-  binanceData(data) {
-    this.foreign = data;
   }
 
   welcome(list) {

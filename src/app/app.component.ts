@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   <app-wrapper></app-wrapper>
-  <app-binance></app-binance>
   `,
   styles: []
 })

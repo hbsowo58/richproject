@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   <app-nav></app-nav>
   <app-view></app-view>
   <app-aside></app-aside>
-  <app-upbit></app-upbit>
   `,
   styles: [`
   `]

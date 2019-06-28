@@ -23,7 +23,7 @@ interface Item {
     <div class="item price">39000</div>
     <div class="item kimchi">12%</div>
     <div class="item pre">0.2%</div> -->
-    {{item.name}} {{item.price}}
+    <app-binance></app-binance>
   </li>
 </ul>
   `,
@@ -64,88 +64,9 @@ interface Item {
   `]
 })
 export class AllComponent implements OnInit {
-  items: Item[] = [
-    {
-      name: 'KRW-BTC',
-      price: 13945000
-    },
-    {
-      name: 'KRW-XRP',
-      price: 505
-    },
-    {
-      name: 'KRW-ETH',
-      price: 370350
-    },
-    {
-      name: 'KRW-BCH',
-      price: 509000
-    },
-    {
-      name: 'KRW-ADA',
-      price: 107
-    },
-    {
-      name: 'KRW-EOS',
-      price: 7260
-    },
-    {
-      name: 'KRW-XLM',
-      price: 136
-    },
-    {
-      name: 'KRW-LTC',
-      price: 143600
-    },
-    {
-      name: 'KRW-QTUM',
-      price: 5545
-    },
-    {
-      name: 'KRW-TRX',
-      price: 40.2
-    },
-    {
-      name: 'KRW-BTT',
-      price: 1.48
-    },
-    {
-      name: 'KRW-ETC',
-      price: 9595
-    },
-    {
-      name: 'KRW-NPXS',
-      price: 1.03
-    },
-    {
-      name: 'KRW-ZEC',
-      price: 139950
-    },
-    {
-      name: 'KRW-NEO',
-      price: 21420
-    },
-    {
-      name: 'KRW-REP',
-      price: 20390
-    },
-    {
-      name: 'KRW-ZIL',
-      price: 20.7
-    },
-    {
-      name: 'KRW-SNT',
-      price: 34.1
-    },
-    {
-      name: 'KRW-MTL',
-      price: 643
-    },
-    {
-      name: 'KRW-OMG',
-      price: 2990
-    }
-   ];
+  items: Item[] 
+
+
 
 
 
