@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
@@ -13,6 +14,7 @@ import { AllComponent } from './all/all.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import { UpbitComponent } from './upbit/upbit.component';
 import { BinanceComponent } from './binance/binance.component';
+// import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { BinanceComponent } from './binance/binance.component';
     BinanceComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
