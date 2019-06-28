@@ -25,7 +25,7 @@ export class ViewComponent implements OnInit {
   }
   binanceData(data) {
     this.foreign = data;
-
+  }
   welcome(list) {
     console.log('hello')
     this.list = list;
