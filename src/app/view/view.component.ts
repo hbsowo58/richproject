@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MarketList } from '../market-list.interface';
 
 @Component({
   selector: 'app-view',
@@ -15,17 +16,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styles: []
 })
 export class ViewComponent implements OnInit {
-  foreign;
-
-  list;
+  foreign: MarketList[];
+  list: MarketList[];
+  total = []
   @Input() upbitData;
   constructor() { }
 
   ngOnInit() {
+    
   }
   binanceData(data) {
     this.foreign = data;
-
+  }
   welcome(list) {
     console.log('hello')
     this.list = list;
