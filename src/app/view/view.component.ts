@@ -145,6 +145,6 @@ export class ViewComponent implements OnInit {
   welcome(list) {
     console.log('hello')
     this.list = list;
-    
+     
   }
 }
