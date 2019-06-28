@@ -14,6 +14,7 @@ import { AllComponent } from './all/all.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import { UpbitComponent } from './upbit/upbit.component';
 import { BinanceComponent } from './binance/binance.component';
+// import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
