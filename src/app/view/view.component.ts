@@ -17,15 +17,13 @@ interface total {
   <app-upbit (upbitData)="welcome($event)"></app-upbit>
   <div class="view">
      <div>
-           <ul class="active">
+            <ng-container *ngIf="isShow">
                <li>
                    <button>이름</button>
                    <button>현재가(원)</button>
                    <button>김치프리미엄</button>
                    <button>전일대비</button>
                </li>
-             </ul>
-
              <ul>
                <li class="all-contents" *ngFor="let item of total">
                  <div class="item name">{{item.name}}</div>
@@ -35,6 +33,10 @@ interface total {
                  <div class="item pre">0.2%</div>
                </li>
              </ul>
+             </ng-container>
+             <button (click)="isShow=!isShow">
+             {{ isShow ? 'hide' : 'show' }}
+           </button>
      </div>
      <div>
            <ul class="#">
@@ -94,9 +96,13 @@ interface total {
   .kimchi {
     color: #98c379;
   }
+  li{
+    list-style: none;
+  }
   `]
 })
 export class ViewComponent implements OnInit {
+  isShow = false;
   foreign;
   list;
   total:total[] = [{name:'btc', upbit_price:"", binance_price:"", diff: 0},
@@ -131,7 +137,7 @@ export class ViewComponent implements OnInit {
     this.total = this.total.map((item, i) => {
       item.upbit_price = this.list[i].price;
       item.binance_price= this.foreign[i].price;
-      item.diff = ((+item.upbit_price - (+item.binance_price)) / +item.upbit_price * 100).toFixed(2);
+      item.diff = +((+item.upbit_price - (+item.binance_price)) / +item.upbit_price * 100).toFixed(2);
       return item;
     })
   }
