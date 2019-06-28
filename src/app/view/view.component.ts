@@ -7,6 +7,7 @@ interface total {
   upbit_price: string;
   binance_price: string;
   diff: number;
+  opening: number;
 }
 
 @Component({
@@ -32,7 +33,7 @@ interface total {
                  <div class="item price">{{item.upbit_price}}</div>
                  <div class="item price">{{item.binance_price}}</div>
                  <div class="item kimchi">{{item.diff}}</div>
-                 <div class="item pre">0.2%</div>
+                 <div class="item pre">{{item.opening}}</div>
                </li>
              </ul>
      </div>
@@ -99,26 +100,27 @@ interface total {
 export class ViewComponent implements OnInit {
   foreign;
   list;
-  total:total[] = [{name:'btc', upbit_price:"", binance_price:"", diff: 0},
-  {name:'XRP', upbit_price:"", binance_price:"", diff: 0},
-  {name:'ETH', upbit_price:"", binance_price:"", diff: 0},
-  {name:'BCH', upbit_price:"", binance_price:"", diff: 0},
-  {name:'ADA', upbit_price:"", binance_price:"", diff: 0},
-  {name:'EOS', upbit_price:"", binance_price:"", diff: 0},
-  {name:'XLM', upbit_price:"", binance_price:"", diff: 0},
-  {name:'LTC', upbit_price:"", binance_price:"", diff: 0},
-  {name:'QTUM', upbit_price:"", binance_price:"", diff: 0},
-  {name:'TRX', upbit_price:"", binance_price:"", diff: 0},
-  {name:'BTT', upbit_price:"", binance_price:"", diff: 0},
-  {name:'ETC', upbit_price:"", binance_price:"", diff: 0},
-  {name:'NPXS', upbit_price:"", binance_price:"", diff: 0},
-  {name:'ZEC', upbit_price:"", binance_price:"", diff: 0},
-  {name:'NEO', upbit_price:"", binance_price:"", diff: 0},
-  {name:'REP', upbit_price:"", binance_price:"", diff: 0},
-  {name:'ZIL', upbit_price:"", binance_price:"", diff: 0},
-  {name:'SNT', upbit_price:"", binance_price:"", diff: 0},
-  {name:'MTL', upbit_price:"", binance_price:"", diff: 0},
-  {name:'OMG', upbit_price:"", binance_price:"", diff: 0}
+  total:total[] = [
+  {name:'BTC', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'XRP', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'ETH', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'BCH', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'ADA', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'EOS', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'XLM', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'LTC', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'QTUM', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'TRX', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'BTT', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'ETC', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'NPXS', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'ZEC', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'NEO', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'REP', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'ZIL', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'SNT', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'MTL', upbit_price:"", binance_price:"", diff: 0, opening: 0},
+  {name:'OMG', upbit_price:"", binance_price:"", diff: 0, opening: 0}
   ]
 
   @Input() upbitData;
@@ -131,14 +133,15 @@ export class ViewComponent implements OnInit {
     this.total = this.total.map((item, i) => {
       item.upbit_price = this.list[i].price;
       item.binance_price= this.foreign[i].price;
-      item.diff = ((+item.upbit_price - (+item.binance_price)) / +item.upbit_price * 100).toFixed(2);
+      item.opening = this.list[i].opening;
+      item.diff = +((+item.upbit_price - (+item.binance_price)) / +item.upbit_price * 100).toFixed(2);
+      item.opening = +((item.opening - (+item.upbit_price)) / +item.upbit_price * 100).toFixed(2);
       return item;
     })
   }
 
   welcome(list) {
-    console.log('hello')
+    console.log(list);
     this.list = list;
-    
   }
 }
