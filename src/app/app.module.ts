@@ -11,6 +11,8 @@ import { ViewComponent } from './view/view.component';
 import { AsideComponent } from './aside/aside.component';
 import { AllComponent } from './all/all.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
+import { UpbitComponent } from './upbit/upbit.component';
+import { BinanceComponent } from './binance/binance.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { BookmarkComponent } from './bookmark/bookmark.component';
     ViewComponent,
     AsideComponent,
     AllComponent,
-    BookmarkComponent
+    BookmarkComponent,
+    UpbitComponent,
+    BinanceComponent
   ],
   imports: [
     BrowserModule
