@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-all',
   template: `
-    <p>
-      all works!
-    </p>
+  <ul>
+    <li></li>
+  </ul>
   `,
   styles: []
 })
