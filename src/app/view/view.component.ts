@@ -45,9 +45,6 @@ export class ViewComponent implements OnInit {
   {name:'OMG', upbit_price:"", binance_price:"", diff: 0}
   ]
 
-  foreign: MarketList[];
-  list: MarketList[];
-  total = []
   @Input() upbitData;
   constructor() { }
 
@@ -61,11 +58,6 @@ export class ViewComponent implements OnInit {
       item.diff = (+item.upbit_price - (+item.binance_price)) / +item.upbit_price * 100
       return item;
     })
-  }
-    
-  }
-  binanceData(data) {
-    this.foreign = data;
   }
 
   welcome(list) {
