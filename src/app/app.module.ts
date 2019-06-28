@@ -14,6 +14,7 @@ import { AllComponent } from './all/all.component';
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import { UpbitComponent } from './upbit/upbit.component';
 import { BinanceComponent } from './binance/binance.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 // import { from } from 'rxjs';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { BinanceComponent } from './binance/binance.component';
     AllComponent,
     BookmarkComponent,
     UpbitComponent,
-    BinanceComponent
+    BinanceComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

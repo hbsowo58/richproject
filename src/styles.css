@@ -29,9 +29,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
+.body,header{
     line-height: 1;
-    /* background-color: #282c34; */
+    background-color : #24282E;
 }
 ol, ul {
     list-style: none;
