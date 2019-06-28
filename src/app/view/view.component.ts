@@ -26,7 +26,6 @@ interface total {
                    <button>전일대비</button>
                </li>
              </ul>
-
              <ul>
                <li class="all-contents" *ngFor="let item of total">
                  <div class="item name">{{item.name}}</div>
@@ -139,6 +138,7 @@ export class ViewComponent implements OnInit {
       return item;
     })
   }
+  
 
   welcome(list) {
     console.log(list);
